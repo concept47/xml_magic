@@ -1,8 +1,4 @@
-xml-magic makes accessing xml objects more like any other ruby object
-
-== example
-
-require 'xml_magic'
+require 'lib/common_thread/xml/xml_magic'
 
 xml = <<XML
 <project title="XML Magic">
