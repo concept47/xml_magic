@@ -20,3 +20,11 @@ puts project_info.description
 for contact in project_info.contact
   puts "#{contact} the #{contact[:type]}"
 end
+
+== example output
+
+XML Magic
+Test description.
+Anthony the Project Manager
+Ben the Worker Bee
+Jason the Designer Bee
