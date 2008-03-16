@@ -1,8 +1,13 @@
 module CommonThread
   module XML
+    # Credit to Jim Weirich at http://onestepback.org/index.cgi/Tech/Ruby/BlankSlate.rdoc
+    class BlankSlate
+      instance_methods.each { |m| undef_method m unless m =~ /^__/ }
+    end    
+    
     # Class that makes accessing xml objects more like any other ruby object
     # thanks to the magic of method missing
-    class XmlMagic
+    class XmlMagic < BlankSlate
       require 'rexml/document'
       
       def initialize(xml, namespace="")
@@ -15,16 +20,8 @@ module CommonThread
         @namespace = namespace
       end
 
-      def class(selection=nil)
-        evaluate("class", selection)
-      end
-
       def each
         @element.each {|e| yield CommonThread::XML::XmlMagic.new(e, @namespace)}
-      end
-
-      def id(selection=nil)
-        evaluate("id", selection)
       end
 
       def method_missing(method, selection=nil)
@@ -45,10 +42,6 @@ module CommonThread
         else
           @element.text
         end
-      end
-
-      def type(selection=nil)
-        evaluate("type", selection)
       end
 
       def [](index, count = nil)
