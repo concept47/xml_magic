@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
    s.name = %q{xml-magic}
-   s.version = "0.1.0"
+   s.version = "0.1.1"
    s.date = %q{2008-03-05}
    s.authors = ["Anthony Crumley", "Ben Wyrosdick"]
    s.email = %q{anthony@commonthread.com}
