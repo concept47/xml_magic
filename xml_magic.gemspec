@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
    s.name = %q{xml-magic}
    s.version = "0.1.1"
-   s.date = %q{2008-03-05}
+   s.date = %q{2008-03-15}
    s.authors = ["Anthony Crumley", "Ben Wyrosdick"]
    s.email = %q{anthony@commonthread.com}
    s.summary = %q{xml-magic makes accessing xml objects more like any other ruby object}
