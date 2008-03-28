@@ -1,6 +1,7 @@
 require 'lib/common_thread/xml/xml_magic'
 
 xml = <<XML
+<?xml version="1.0" encoding="utf-8" ?>
 <project title="XML Magic">
   <description>Test description.</description>
   <contact type="Project Manager">Anthony</contact>
