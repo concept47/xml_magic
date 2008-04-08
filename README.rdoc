@@ -2,6 +2,7 @@ xml-magic makes accessing xml objects more like any other ruby object
 
 == example
 
+<pre>
 require 'xml_magic'
 
 xml = <<XML
@@ -20,11 +21,14 @@ puts project_info.description
 for contact in project_info.contact
   puts "#{contact} the #{contact[:type]}"
 end
+</pre>
 
 == example output
 
+<pre>
 XML Magic
 Test description.
 Anthony the Project Manager
 Ben the Worker Bee
 Jason the Designer Bee
+</pre>
