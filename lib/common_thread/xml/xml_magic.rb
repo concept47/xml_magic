@@ -1,6 +1,7 @@
 
 module CommonThread
   module XML
+
     # Credit to Jim Weirich at http://onestepback.org/index.cgi/Tech/Ruby/BlankSlate.rdoc
     class BlankSlate
       instance_methods.each { |m| undef_method m unless m =~ /^__/ }
@@ -104,6 +105,7 @@ module CommonThread
         if xml.is_a?(::LibXML::XML::Node) or xml.class == Array
           @element = xml
         else
+          # At this time, LibXML doesn't support a simple method to convert a string to an XML document
           parser = ::LibXML::XML::Parser.new
           parser.string = xml          
           @xml = parser.parse # returns XML::Document
@@ -117,7 +119,7 @@ module CommonThread
       end
 
       # I have no idea why the next two methods have to be defined. XmlMagic will choke and try to evaluate `respond_to?`
-      # if we don't define them
+      # if we don't define them.
       def to_ary
         @element.to_a
       end
@@ -188,9 +190,7 @@ module CommonThread
           end
         end        
       end
-       
      end
-     
    end
 end
 

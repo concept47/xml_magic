@@ -28,3 +28,7 @@ xml-magic makes accessing xml objects more like any other ruby object
   Anthony the Project Manager
   Ben the Worker Bee
   Jason the Designer Bee
+  
+== LibXml (faster parsing)
+  LibXML is not included in the standard ruby installation. You can download it from http://libxml.rubyforge.org/
+  To use LibXML simply instantiate your XmlMagic object like so: CommonThread::LibXML::XmlMagic.new(xml)
