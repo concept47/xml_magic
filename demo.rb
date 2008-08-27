@@ -5,10 +5,10 @@ xml = <<XML
 <project title="XML Magic" xmlns:media='http://www.w3.org/1999/XSL/Transform'>
   <media:content>This is the content.</media:content>
   <description>Test description.</description>
-  <other_thing>blah</other_thing>
   <contact type="Project Manager">Anthony</contact>
   <contact type="Worker Bee">Ben</contact>
   <contact type="Designer Bee">Jason</contact>
+  <contact type="Admiral Bee">James</contact>
 </project>
 XML
 
@@ -43,6 +43,6 @@ begin
   puts "   user     system      total        real"
   puts libxml_bm
   
-rescue LoadError => e
-  puts "** LibXML not tested."
+rescue Exception => e
+  puts "libxml not tested."
 end
