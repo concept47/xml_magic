@@ -6,7 +6,7 @@ class TestXmlMagic < Test::Unit::TestCase
   end
   
   def test_xml_magic
-    x = CommonThread::XML::XmlMagic.new('<project title="Xml Magic" class="CommonThread::XML::XmlMagic"><media:content>This is the content.</media:content><type>New</type><contact name="Anthony">Anthony</contact><contact name="Ben">Ben</contact><contact name="Jason">Jason</contact><description>Test description.</description></project>')
+    x = CommonThread::XML::XmlMagic.new('<project xmlns:media="http://www.w3.org/1999/XSL/Transform" title="Xml Magic" class="CommonThread::XML::XmlMagic"><media:content>This is the content.</media:content><type>New</type><contact name="Anthony">Anthony</contact><contact name="Ben">Ben</contact><contact name="Jason">Jason</contact><description>Test description.</description></project>')
     
     # Elements without namespaces
     assert_equal("Test description.", x.description.to_s, "Element text not retrieved for to_s.")
