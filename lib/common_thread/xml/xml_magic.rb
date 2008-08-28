@@ -99,9 +99,9 @@ module CommonThread
       end    
      
      class XmlMagic < BlankSlate
-       require 'libxml'
+       require 'libxml'       
 
-       def initialize(xml, namespace="")
+      def initialize(xml, namespace="")
         if xml.is_a?(::LibXML::XML::Node) or xml.class == Array
           @element = xml
         else
@@ -112,8 +112,21 @@ module CommonThread
           @element = @xml.root # returns XML::Node
         end
         @namespace = namespace
-       end
-       
+      end
+      
+      # Define some basic comparison methods
+      def ==(other)
+        other == @element
+      end
+
+      def ===(other)
+        other === @element
+      end
+
+      def nil?
+        nil === @element
+      end 
+              
       def each
         @element.each {|e| yield CommonThread::LibXML::XmlMagic.new(e, @namespace)}
       end

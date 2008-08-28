@@ -31,7 +31,12 @@ class TestXmlMagic < Test::Unit::TestCase
       assert(contact[:name] != nil, "Attribute name should not be nil.")
       assert(contact[:phone] == nil, "Attribute phone should be nil.")
     end
-    assert_equal(3, x.contact(:count), "Multiple element count is wrong.")    
+    assert_equal(3, x.contact(:count), "Multiple element count is wrong.")
+    
+    # Comparison operators
+    assert_equal(true, x.contact(:count) === 3, "Comparision operator `===` is wrong." )    
+    assert_equal(true, x.contact(:count) == 3, "Comparision operator `==` is wrong." )    
+    assert_equal(true, x.fake_node.nil?, "nil? is wrong." )    
   end
   
   def test_xml_magic_with_libxml
@@ -61,6 +66,12 @@ class TestXmlMagic < Test::Unit::TestCase
       assert(contact[:phone] == nil, "Attribute phone should be nil.")
     end
     assert_equal(3, x.contact(:count), "Multiple element count is wrong.")    
+    
+    # Comparison operators
+    assert_equal(true, x.contact(:count) === 3, "Comparision operator `===` is wrong." )    
+    assert_equal(true, x.contact(:count) == 3, "Comparision operator `==` is wrong." )    
+    assert_equal(true, x.fake_node.nil?, "nil? is wrong." )    
+    
   end
   
 end
