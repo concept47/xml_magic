@@ -34,8 +34,6 @@ class TestXmlMagic < Test::Unit::TestCase
     assert_equal(3, x.contact(:count), "Multiple element count is wrong.")
     
     # Comparison operators
-    assert_equal(true, x.contact(:count) === 3, "Comparision operator `===` is wrong." )    
-    assert_equal(true, x.contact(:count) == 3, "Comparision operator `==` is wrong." )    
     assert_equal(true, x.fake_node.nil?, "nil? is wrong." )    
   end
   
@@ -68,8 +66,6 @@ class TestXmlMagic < Test::Unit::TestCase
     assert_equal(3, x.contact(:count), "Multiple element count is wrong.")    
     
     # Comparison operators
-    assert_equal(true, x.contact(:count) === 3, "Comparision operator `===` is wrong." )    
-    assert_equal(true, x.contact(:count) == 3, "Comparision operator `==` is wrong." )    
     assert_equal(true, x.fake_node.nil?, "nil? is wrong." )    
     
   end
